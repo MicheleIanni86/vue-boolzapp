@@ -67,18 +67,33 @@
 }
 
 .boxInput {
-    background-color: #eaeaea;
+    background-color: #fafafa;
     height: 50px;
 }
 
 .boxContact{
+    background-color: #ffffff;
     overflow: auto;
     flex-grow: 1;
 }
 
 .contactSx {
+    background-color: #e9ebeb;
+    display: flex;
+    align-items: center;
     height: 75px;
+    border-bottom: 1px solid lightgray;
 }
+
+.contactSx div img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.contactSx div p:last-child {
+    font-size: 12px;
+}
+
 
 
 /* COLONNA DESTRA */
@@ -89,8 +104,15 @@
 }
 
 .mainTitleDx {
+    background-color: #eaeaea;
     height: 65px;
 }
+
+.mainTitleDx div img {
+    height: 50px;
+    border-radius: 50%;
+}
+
 
 .mainMessage {
     background-image: url(../img/mine.jpg);
