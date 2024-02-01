@@ -1,0 +1,95 @@
+.bord {
+    border: 2px dashed red;
+}
+
+.bordgreen {
+    border: 2px dashed green;
+}
+
+.bordblue {
+    border: 2px dashed blue;
+}
+
+.bordblack {
+    border: 2px dashed black;
+}
+
+.bordgray {
+    border: 2px dashed gray;
+}
+/* DEBUG-------------------------------------------------------------- */
+
+/* BODY */
+.container-main {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#009688 15%, #dbdbd2 15%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTAINER ESTERNO */
+.containerExt {
+    width: 80vw;
+    height: 95vh;
+    display: flex;
+}
+
+/* COLONNA SINISTRA */
+.colSx{
+    display: flex;
+    flex-direction: column;
+    width: 34%;
+}
+
+.mainTitleSx {
+    height: 65px;
+}
+
+.boxNotif {
+    height: 75px;
+}
+
+.boxInput {
+    height: 50px;
+}
+
+.boxContact{
+    overflow: auto;
+    flex-grow: 1;
+}
+
+.contactSx {
+    height: 75px;
+}
+
+
+/* COLONNA DESTRA */
+.colDx{
+    display: flex;
+    flex-direction: column;
+    width: 66%;
+}
+
+.mainTitleDx {
+    height: 60px;
+}
+
+.mainMessage {
+    background-image: url(../img/mine.jpg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerMessage {
+    width: 90%;
+    height: 90%;
+}
+
+.footerMessage {
+    height: 60px;
+}
