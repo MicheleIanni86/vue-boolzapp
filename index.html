@@ -67,12 +67,12 @@
         <div class="boxContact ">
 
             <!-- CONTATTI -->
-            <div class="contactSx">
+            <div v-for="(contact, i) in contacts" class="contactSx" :class="{'active': i == currentContact}">
                 <div class="ms-3">
-                    <img src="./img/avatar_1.jpg" alt="">
+                    <img :src="contact.avatar" alt="">
                 </div>
                 <div class="ms-3">
-                    <p class="m-0 fw-bolder">Michele</p>
+                    <p class="m-0 fw-bolder">{{ contact.name }}</p>
                     <p class="m-0 fw-bolder text-secondary">Ultimo messaggio inviato</p>
                 </div>
             </div>
@@ -86,12 +86,15 @@
     <div class="colDx">
 
         <!-- MAIN USER CONTACT -->
-        <div class="mainTitleDx d-flex justify-content-between align-items-center">
-            <div class="m-5">
-                <img src="./img/avatar_1.jpg" alt="">
-                <span class="ms-2 ">Michele</span>
-            </div>
-            <div class="m-5">
+        <div class="mainTitleDx d-flex align-items-center px-4 gap-3">
+                <div class=" d-flex ">
+                    <img src="./img/avatar_1.jpg" alt="">
+                </div>
+                <div class=" flex-grow-1">
+                    <p class="m-0 fw-bolder">Michele</p>
+                    <p class="m-0 fw-bolder text-secondary">Ultimo accesso oggi alle </p>
+                </div>
+            <div class=" flex-end d-flex ">
                 <i class="fa-solid fa-magnifying-glass text-secondary ms-3 fs-4 "></i>
                 <i class="fa-solid fa-paperclip text-secondary ms-3 fs-4"></i>
                 <i class="fa-solid fa-ellipsis-vertical text-secondary ms-3 fs-4"></i>
@@ -102,13 +105,11 @@
         <div class="mainMessage">
 
             <!-- CONTAINER MESSAGE -->
-            <div class="containerMessage d-flex flex-column  p-2">
-                <div class="d-flex mb-3 align-items-center  align-self-end sendedMsg">
-                  <div class="p-2">Messaggio inviato</div>
+            <div class="containerMessage d-flex flex-column p-2">
+                <div v-for="message in contacts[currentContact].messages" class="d-flex mb-3 align-items-center ps-3" :class="message.status == 'sent' ? 'sendedMsg' : 'receivedMsg'">
+                  {{ message.message }}
                 </div>
-                <div class="d-flex align-items-center  align-self-start receivedMsg ">
-                    <div class="p-2">Messaggio ricevuto</div>
-                  </div>
+
             </div>
         </div>
 

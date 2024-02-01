@@ -79,11 +79,15 @@
 }
 
 .contactSx {
-    background-color: #e9ebeb;
+    background-color: white;
     display: flex;
     align-items: center;
     height: 75px;
     border-bottom: 1px solid lightgray;
+}
+
+.contactSx.active {
+   background-color: #e9ebeb;
 }
 
 .contactSx div img {
@@ -114,6 +118,10 @@
     border-radius: 50%;
 }
 
+.mainTitleDx div p:last-child {
+    font-size: 12px;
+}
+
 
 .mainMessage {
     background-image: url(../img/mine.jpg);
@@ -130,6 +138,7 @@
 }
 
 .sendedMsg {
+    align-self: flex-end;
     background-color: #d5f9ba;
     border-radius: 15px;
     width: 40%;
@@ -138,6 +147,7 @@
 }
 
 .receivedMsg {
+    align-self: flex-start;
     background-color: #ffffff;
     border-radius: 15px; 
     width: 40%;
