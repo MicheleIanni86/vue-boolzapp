@@ -47,6 +47,7 @@
 .mainTitleSx {
     background-color: #eaeaea;
     height: 65px;
+    border-right: 1px solid lightgray;
 }
 
 .mainTitleSx div img {
@@ -124,10 +125,28 @@
 }
 
 .containerMessage {
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
 }
 
-.footerMessage {
+.sendedMsg {
+    background-color: #d5f9ba;
+    border-radius: 15px;
+    width: 40%;
     height: 60px;
+
+}
+
+.receivedMsg {
+    background-color: #ffffff;
+    border-radius: 15px; 
+    width: 40%;
+    height: 60px;
+}
+
+
+
+.footerMessage {
+    background-color: #f3eeea;
+    height: 70px;
 }

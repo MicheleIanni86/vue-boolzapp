@@ -60,7 +60,7 @@
             <div class="input-group px-2">
                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass text-secondary"></i></span>
                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
-              </div>             
+            </div>             
         </div>
 
         <!-- BOX CONTATTI -->
@@ -83,7 +83,7 @@
     </div>
 
     <!-- COLONNA DESTRA -->
-    <div class="colDx bordgreen ">
+    <div class="colDx">
 
         <!-- MAIN USER CONTACT -->
         <div class="mainTitleDx d-flex justify-content-between align-items-center">
@@ -98,16 +98,28 @@
             </div>
         </div>
 
+        <!-- MAIN MESSAGE -->
         <div class="mainMessage">
-            <div class="containerMessage bordblack">
 
+            <!-- CONTAINER MESSAGE -->
+            <div class="containerMessage d-flex flex-column  p-2">
+                <div class="d-flex mb-3 align-items-center  align-self-end sendedMsg">
+                  <div class="p-2">Messaggio inviato</div>
+                </div>
+                <div class="d-flex align-items-center  align-self-start receivedMsg ">
+                    <div class="p-2">Messaggio ricevuto</div>
+                  </div>
             </div>
-
-
-
-
         </div>
-        <div class="footerMessage bordgreen">
+
+
+
+        <div class="footerMessage d-flex p-2">
+            <div class="input-group d-flex justify-content-between align-items-center">
+                <i class="fa-regular fa-face-smile mx-4 fs-4 text-secondary"></i>
+                <input type="text" class="form-control rounded" placeholder="Scrivi un messaggio">
+                <i class="fa-solid fa-microphone mx-4 fs-4 text-secondary"></i>
+            </div>             
 
         </div>
 
