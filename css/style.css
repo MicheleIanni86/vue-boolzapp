@@ -55,7 +55,15 @@
 }
 
 .boxNotif {
+    background-color: #8edafc;
     height: 75px;
+}
+
+.boxNotif div:first-child {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: white;
 }
 
 .boxInput {
