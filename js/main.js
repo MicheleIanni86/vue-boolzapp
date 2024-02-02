@@ -120,20 +120,8 @@ const app = createApp({
         },
 
         changeCurrentUser(index) {
-            // devo cambiare currentContact con l'index
             this.currentContact = index;
         },
-
-        // clickContact((event, i) => ({
-        //     if (event == currentContact) {
-        //         currentContact[i];
-        //         return event;
-        //         alert('Hai cliccato il nome');
-        //     } else {
-
-        //         alert('Hasdasdl nome');
-        //     }
-        // })
 
 
     }

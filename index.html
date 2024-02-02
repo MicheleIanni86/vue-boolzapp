@@ -38,9 +38,9 @@
                 <span class="ms-2">Sofia</span>
             </div>
             <div class="m-3">
-                <i class="fa-solid fa-circle-notch text-secondary ms-3 fs-4 "></i>
-                <i class="fa-solid fa-message text-secondary ms-3 fs-4"></i>
-                <i class="fa-solid fa-ellipsis-vertical text-secondary ms-3 fs-4"></i>
+                <i class="fa-solid fa-circle-notch text-secondary ms-3 fs-4" type="button"></i>
+                <i class="fa-solid fa-message text-secondary ms-3 fs-4" type="button"></i>
+                <i class="fa-solid fa-ellipsis-vertical text-secondary ms-3 fs-4" type="button"></i>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
             </div>
             <div>
                 <p class="m-0">Ricevi notifiche di nuovi messaggi</p>
-                <p class="m-0 text-decoration-underline text-secondary">Attiva notifiche desktop</p>
+                <p class="m-0 text-decoration-underline text-secondary" type="button">Attiva notifiche desktop</p>
             </div>
         </div>
         
@@ -74,7 +74,7 @@
                     <p class="m-0 fw-bolder">{{ contact.name }}</p>
                     <p class="m-0 fw-bolder text-secondary"> {{ contact.messages[contact.messages.length - 1].message }} </p>
                 </div>
-                <p class=" text-secondary last-access">{{ lastAccessMessage(contact.messages) }}</p>
+                <p class=" text-secondary last-access">{{ lastAccessMessage(contact.messages).substring(10,16) }}</p>
             </div>
 
         </div>
@@ -95,9 +95,9 @@
                     <p class="m-0 fw-bolder text-secondary">{{ lastAccessMessage(contacts[currentContact].messages) }}</p>
                 </div>
             <div class=" flex-end d-flex ">
-                <i class="fa-solid fa-magnifying-glass text-secondary ms-3 fs-4 "></i>
-                <i class="fa-solid fa-paperclip text-secondary ms-3 fs-4"></i>
-                <i class="fa-solid fa-ellipsis-vertical text-secondary ms-3 fs-4"></i>
+                <i class="fa-solid fa-magnifying-glass text-secondary ms-3 fs-4" type="button"></i>
+                <i class="fa-solid fa-paperclip text-secondary ms-3 fs-4" type="button"></i>
+                <i class="fa-solid fa-ellipsis-vertical text-secondary ms-3 fs-4" type="button"></i>
             </div>
         </div>
 
@@ -106,10 +106,10 @@
 
             <!-- CONTAINER MESSAGE -->
             <div class="containerMessage d-flex flex-column p-2">
-                <div v-for="message in contacts[currentContact].messages" class="d-flex mb-3 align-items-center px-3" :class="message.status == 'sent' ? 'sendedMsg' : 'receivedMsg'">
-                  {{ message.message }}
+                <div v-for="message in contacts[currentContact].messages" class="d-flex mb-3 align-items-center px-3 containerMsgBox" :class="message.status == 'sent' ? 'sendedMsg' : 'receivedMsg'">
+                  {{ message.message }} 
+                 <p class="msgHour text-secondary fw-bold">{{ lastAccessMessage(contacts[currentContact].messages).substring(10,16) }}</p>
                 </div>
-
             </div>
         </div>
 
@@ -117,9 +117,9 @@
 
         <div class="footerMessage d-flex p-2">
             <div class="input-group d-flex justify-content-between align-items-center">
-                <i class="fa-regular fa-face-smile mx-4 fs-4 text-secondary"></i>
+                <i class="fa-regular fa-face-smile mx-4 fs-4 text-secondary"  type="button"></i>
                 <input type="text" class="form-control rounded" placeholder="Scrivi un messaggio">
-                <i class="fa-solid fa-microphone mx-4 fs-4 text-secondary"></i>
+                <i class="fa-solid fa-microphone mx-4 fs-4 text-secondary"  type="button"></i>
             </div>             
 
         </div>

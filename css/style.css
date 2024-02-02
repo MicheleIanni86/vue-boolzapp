@@ -150,13 +150,24 @@
 .containerMessage {
     width: 80%;
     height: 80%;
+   
+}
+.containerMsgBox {
+    position: relative;
+}
+
+.msgHour {
+    position: absolute;
+    right: 8px;
+    top: 42px;
+    font-size: 10px;
 }
 
 .sendedMsg {
     align-self: flex-end;
     background-color: #d5f9ba;
     border-radius: 15px;
-    max-width: 55%;
+    min-width: 50%;
     height: 60px;
     word-wrap: break-word;
 
@@ -166,7 +177,7 @@
     align-self: flex-start;
     background-color: #ffffff;
     border-radius: 15px; 
-    max-width: 55%;
+    min-width: 50%;
     height: 60px;
 }
 
