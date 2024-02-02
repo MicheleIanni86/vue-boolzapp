@@ -85,6 +85,12 @@
     height: 75px;
     border-bottom: 1px solid lightgray;
     position: relative;
+    cursor: pointer;
+}
+
+.contactSx:hover {
+    background-color: #e9ebeb;
+
 }
 
 .contactSx.active {

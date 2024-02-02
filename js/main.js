@@ -106,7 +106,6 @@ const app = createApp({
                     ],
                 }
             ],
-            contact: 0,
             currentContact: 0,
         };
     },
@@ -118,7 +117,26 @@ const app = createApp({
             });
             const lastMsg = sentMsgs[sentMsgs.length - 1];
             return lastMsg.date;
-        }
+        },
+
+        changeCurrentUser(index) {
+            // devo cambiare currentContact con l'index
+            this.currentContact = index;
+        },
+
+        // clickContact((event, i) => ({
+        //     if (event == currentContact) {
+        //         currentContact[i];
+        //         return event;
+        //         alert('Hai cliccato il nome');
+        //     } else {
+
+        //         alert('Hasdasdl nome');
+        //     }
+        // })
+
+
     }
 }).mount('#root');
 // END SCRIPT VUEJS-------------------------------------------------------------------------------------------
+

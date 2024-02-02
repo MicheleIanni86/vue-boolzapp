@@ -65,15 +65,14 @@
 
         <!-- BOX CONTATTI -->
         <div class="boxContact ">
-
-            <!-- CONTATTI -->
-            <div v-for="(contact, i) in contacts" class="contactSx" :class="{'active': i == currentContact}">
+            <!-- CONTATTI cliccando un contact, chiama funzione changeCurrentUser(qui indice scheda) -->
+            <div  v-for="(contact, i) in contacts" class="contactSx" :class="{'active': i == currentContact}" @click="changeCurrentUser(i)">
                 <div class="ms-3 ">
                     <img :src="contact.avatar" alt="">
                 </div>
                 <div class="ms-3 d-flex flex-column ">
                     <p class="m-0 fw-bolder">{{ contact.name }}</p>
-                    <p class="m-0 fw-bolder text-secondary">Ultimo messaggio inviato</p>
+                    <p class="m-0 fw-bolder text-secondary"> {{ contact.messages[contact.messages.length - 1].message }} </p>
                 </div>
                 <p class=" text-secondary last-access">{{ lastAccessMessage(contact.messages) }}</p>
             </div>
