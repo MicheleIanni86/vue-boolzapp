@@ -145,11 +145,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: auto;
 }
 
 .containerMessage {
     width: 80%;
     height: 80%;
+    overflow: auto;
    
 }
 .containerMsgBox {
@@ -168,7 +170,7 @@
     background-color: #d5f9ba;
     border-radius: 15px;
     min-width: 50%;
-    height: 60px;
+    min-height: 60px;
     word-wrap: break-word;
 
 }
@@ -178,7 +180,7 @@
     background-color: #ffffff;
     border-radius: 15px; 
     min-width: 50%;
-    height: 60px;
+    min-height: 60px;
 }
 
 

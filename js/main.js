@@ -107,6 +107,12 @@ const app = createApp({
                 }
             ],
             currentContact: 0,
+
+            newMsg: {
+                date: '',
+                message: '',
+                status: 'sent'
+            },
         };
     },
 
@@ -123,8 +129,21 @@ const app = createApp({
             this.currentContact = index;
         },
 
+        newDate() {
+            const newDates = new Date();
+            return `${newDates.getDate().toString().padStart(2, '0')}/${(newDates.getMonth() + 1).toString().padStart(2, '0')}/${newDates.getFullYear()} ${newDates.getHours()}:${newDates.getMinutes()}:${newDates.getSeconds()}`;
+        },
 
-    }
+        newMsgSend() {
+            const newMsg = { ...this.newMsg };
+            newMsg.date = this.newDate();
+            this.contacts[this.currentContact].messages.push(newMsg);
+            this.newMsg.message = '';
+
+        }
+    },
+
+
 }).mount('#root');
 // END SCRIPT VUEJS-------------------------------------------------------------------------------------------
 
