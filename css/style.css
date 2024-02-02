@@ -84,6 +84,7 @@
     align-items: center;
     height: 75px;
     border-bottom: 1px solid lightgray;
+    position: relative;
 }
 
 .contactSx.active {
@@ -97,6 +98,14 @@
 
 .contactSx div p:last-child {
     font-size: 12px;
+}
+.last-access {
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+   
 }
 
 
@@ -141,8 +150,9 @@
     align-self: flex-end;
     background-color: #d5f9ba;
     border-radius: 15px;
-    width: 40%;
+    max-width: 55%;
     height: 60px;
+    word-wrap: break-word;
 
 }
 
@@ -150,7 +160,7 @@
     align-self: flex-start;
     background-color: #ffffff;
     border-radius: 15px; 
-    width: 40%;
+    max-width: 55%;
     height: 60px;
 }
 

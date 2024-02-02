@@ -106,9 +106,19 @@ const app = createApp({
                     ],
                 }
             ],
-
+            contact: 0,
             currentContact: 0,
         };
+    },
+
+    methods: {
+        lastAccessMessage(messages) {
+            const sentMsgs = messages.filter((message) => {
+                return message.status == 'sent';
+            });
+            const lastMsg = sentMsgs[sentMsgs.length - 1];
+            return lastMsg.date;
+        }
     }
 }).mount('#root');
 // END SCRIPT VUEJS-------------------------------------------------------------------------------------------

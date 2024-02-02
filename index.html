@@ -68,13 +68,14 @@
 
             <!-- CONTATTI -->
             <div v-for="(contact, i) in contacts" class="contactSx" :class="{'active': i == currentContact}">
-                <div class="ms-3">
+                <div class="ms-3 ">
                     <img :src="contact.avatar" alt="">
                 </div>
-                <div class="ms-3">
+                <div class="ms-3 d-flex flex-column ">
                     <p class="m-0 fw-bolder">{{ contact.name }}</p>
                     <p class="m-0 fw-bolder text-secondary">Ultimo messaggio inviato</p>
                 </div>
+                <p class=" text-secondary last-access">{{ lastAccessMessage(contact.messages) }}</p>
             </div>
 
         </div>
@@ -88,11 +89,11 @@
         <!-- MAIN USER CONTACT -->
         <div class="mainTitleDx d-flex align-items-center px-4 gap-3">
                 <div class=" d-flex ">
-                    <img src="./img/avatar_1.jpg" alt="">
+                    <img :src="contacts[currentContact].avatar">
                 </div>
                 <div class=" flex-grow-1">
-                    <p class="m-0 fw-bolder">Michele</p>
-                    <p class="m-0 fw-bolder text-secondary">Ultimo accesso oggi alle </p>
+                    <p class="m-0 fw-bolder">{{ contacts[currentContact].name }}</p>
+                    <p class="m-0 fw-bolder text-secondary">{{ lastAccessMessage(contacts[currentContact].messages) }}</p>
                 </div>
             <div class=" flex-end d-flex ">
                 <i class="fa-solid fa-magnifying-glass text-secondary ms-3 fs-4 "></i>
@@ -106,7 +107,7 @@
 
             <!-- CONTAINER MESSAGE -->
             <div class="containerMessage d-flex flex-column p-2">
-                <div v-for="message in contacts[currentContact].messages" class="d-flex mb-3 align-items-center ps-3" :class="message.status == 'sent' ? 'sendedMsg' : 'receivedMsg'">
+                <div v-for="message in contacts[currentContact].messages" class="d-flex mb-3 align-items-center px-3" :class="message.status == 'sent' ? 'sendedMsg' : 'receivedMsg'">
                   {{ message.message }}
                 </div>
 
