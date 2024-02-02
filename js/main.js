@@ -106,7 +106,10 @@ const app = createApp({
                     ],
                 }
             ],
+
+
             currentContact: 0,
+
 
             newMsg: {
                 date: '',
@@ -129,20 +132,31 @@ const app = createApp({
             this.currentContact = index;
         },
 
-        newDate() {
+        newDateNow() {
             const newDates = new Date();
-            return `${newDates.getDate().toString().padStart(2, '0')}/${(newDates.getMonth() + 1).toString().padStart(2, '0')}/${newDates.getFullYear()} ${newDates.getHours()}:${newDates.getMinutes()}:${newDates.getSeconds()}`;
+            return `${newDates.getDate().toString().padStart(2, '0')}/${(newDates.getMonth() + 1).toString().padStart(2, '0')}/${newDates.getFullYear()} ${newDates.getHours().toString().padStart(2, '0')}:${newDates.getMinutes().toString().padStart(2, '0')}:${newDates.getSeconds().toString().padStart(2, '0')}`;
         },
 
         newMsgSend() {
             const newMsg = { ...this.newMsg };
-            newMsg.date = this.newDate();
+            newMsg.date = this.newDateNow();
             this.contacts[this.currentContact].messages.push(newMsg);
             this.newMsg.message = '';
 
-        }
-    },
+            setTimeout(this.automaticResponse, 1500);
+        },
 
+        automaticResponse() {
+            const messageReceiveNew = {
+                message: 'Mi dispiace non ti conosco!',
+                date: this.newDateNow(),
+                status: 'received',
+            };
+
+            this.contacts[this.currentContact].messages.push(messageReceiveNew);
+
+        },
+    },
 
 }).mount('#root');
 // END SCRIPT VUEJS-------------------------------------------------------------------------------------------
