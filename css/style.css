@@ -57,7 +57,7 @@
 
 .boxNotif {
     background-color: #8edafc;
-    height: 75px;
+    min-height: 75px;
 }
 
 .boxNotif div:first-child {

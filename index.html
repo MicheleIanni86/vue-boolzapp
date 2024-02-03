@@ -59,14 +59,14 @@
         <div class="boxInput d-flex justify-content-center align-items-center ">
             <div class="input-group px-2">
                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass text-secondary"></i></span>
-                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Example text with button addon" aria-describedby="button-addon1" v-model="searChat">
             </div>             
         </div>
 
         <!-- BOX CONTATTI -->
         <div class="boxContact ">
             <!-- CONTATTI cliccando un contact, chiama funzione changeCurrentUser(qui indice scheda) -->
-            <div  v-for="(contact, i) in contacts" class="contactSx" :class="{'active': i == currentContact}" @click="changeCurrentUser(i)">
+            <div  v-for="(contact, i) in contacts" v-show="contact.name.toUpperCase().includes(searChat) || contact.name.toLowerCase().includes(searChat)" class="contactSx" :class="{'active': i == currentContact}" @click="changeCurrentUser(i)">
                 <div class="ms-3 ">
                     <img :src="contact.avatar" alt="">
                 </div>
@@ -74,7 +74,7 @@
                     <p class="m-0 fw-bolder">{{ contact.name }}</p>
                     <p class="m-0 fw-bolder text-secondary"> {{ contact.messages[contact.messages.length - 1].message }} </p>
                 </div>
-                <p class=" text-secondary last-access">{{ lastAccessMessage(contact.messages).substring(10,16) }}</p>
+                <p class=" text-secondary last-access">{{ lastAccessMessage(contact.messages)}}</p>
             </div>
 
         </div>
@@ -108,7 +108,7 @@
             <div class="containerMessage d-flex flex-column p-2">
                 <div v-for="message in contacts[currentContact].messages" class="d-flex mb-3 align-items-center px-3 containerMsgBox" :class="message.status == 'sent' ? 'sendedMsg' : 'receivedMsg'">
                   {{ message.message }} 
-                 <p class="msgHour text-secondary fw-bold">{{ lastAccessMessage(contacts[currentContact].messages).substring(10,16) }}</p>
+                 <p class="msgHour text-secondary fw-bold">{{ (message.date).substring(10,16) }}</p>
                 </div>
             </div>
         </div>

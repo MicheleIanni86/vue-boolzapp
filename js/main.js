@@ -107,7 +107,7 @@ const app = createApp({
                 }
             ],
 
-
+            searChat: "",
             currentContact: 0,
 
 
