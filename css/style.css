@@ -152,8 +152,19 @@
     width: 80%;
     height: 80%;
     overflow: auto;
-   
+    position: relative;
 }
+
+.button-Dropdown {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+}
+
+.item-Dropdown {
+    background-color: transparent;
+}
+
 .containerMsgBox {
     position: relative;
 }

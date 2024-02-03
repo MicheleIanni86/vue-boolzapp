@@ -109,6 +109,15 @@
                 <div v-for="message in contacts[currentContact].messages" class="d-flex mb-3 align-items-center px-3 containerMsgBox" :class="message.status == 'sent' ? 'sendedMsg' : 'receivedMsg'">
                   {{ message.message }} 
                  <p class="msgHour text-secondary fw-bold">{{ (message.date).substring(10,16) }}</p>
+                 <div class="dropdown button-Dropdown">
+                    <button class="dropdown-toggle border-0 item-Dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                    
+                    </button>
+                    <ul class="dropdown-menu  ">
+                      <li><a class="dropdown-item" href="#">Message info</a></li>
+                      <li><a class="dropdown-item" href="#">Delete message</a></li>
+                    </ul>
+                  </div>
                 </div>
             </div>
         </div>
