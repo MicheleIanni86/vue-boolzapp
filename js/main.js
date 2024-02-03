@@ -109,6 +109,7 @@ const app = createApp({
 
             searChat: "",
             currentContact: 0,
+            isHidden: false,
 
 
             newMsg: {

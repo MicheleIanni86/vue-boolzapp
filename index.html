@@ -106,7 +106,7 @@
 
             <!-- CONTAINER MESSAGE -->
             <div class="containerMessage d-flex flex-column p-2">
-                <div v-for="message in contacts[currentContact].messages" class="d-flex mb-3 align-items-center px-3 containerMsgBox" :class="message.status == 'sent' ? 'sendedMsg' : 'receivedMsg'">
+                <div v-for="message in contacts[currentContact].messages" class="d-flex mb-3 align-items-center px-3 containerMsgBox" :class="message.status == 'sent' ? 'sendedMsg' : 'receivedMsg'"  v-if="!isHidden">
                   {{ message.message }} 
                  <p class="msgHour text-secondary fw-bold">{{ (message.date).substring(10,16) }}</p>
                  <div class="dropdown button-Dropdown">
@@ -114,8 +114,8 @@
                     
                     </button>
                     <ul class="dropdown-menu  ">
-                      <li><a class="dropdown-item" href="#">Message info</a></li>
-                      <li><a class="dropdown-item" href="#">Delete message</a></li>
+                      <li><a class="dropdown-item " href="#">Message info</a></li>
+                      <li><a class="dropdown-item " href="#" v-on:click="isHidden = true">Delete message</a></li>
                     </ul>
                   </div>
                 </div>
