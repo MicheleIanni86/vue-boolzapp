@@ -157,6 +157,11 @@ const app = createApp({
             this.contacts[this.currentContact].messages.push(messageReceiveNew);
 
         },
+
+        deleteMsgCurrent(i) {
+            const deleteMsg = this.contacts[this.currentContact].messages;
+            deleteMsg.splice(i, 1);
+        }
     },
 
 }).mount('#root');

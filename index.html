@@ -72,9 +72,9 @@
                 </div>
                 <div class="ms-3 d-flex flex-column ">
                     <p class="m-0 fw-bolder">{{ contact.name }}</p>
-                    <p class="m-0 fw-bolder text-secondary"> {{ contact.messages[contact.messages.length - 1].message }} </p>
+                    <p class="m-0 fw-bolder text-secondary" v-if="contact.messages.length > 0"> {{ contact.messages[contact.messages.length - 1].message }} </p>
                 </div>
-                <p class=" text-secondary last-access">{{ lastAccessMessage(contact.messages)}}</p>
+                <p class=" text-secondary last-access" v-if="contact.messages.length > 0">{{ lastAccessMessage(contact.messages)}}</p>
             </div>
 
         </div>
@@ -92,7 +92,7 @@
                 </div>
                 <div class=" flex-grow-1">
                     <p class="m-0 fw-bolder">{{ contacts[currentContact].name }}</p>
-                    <p class="m-0 fw-bolder text-secondary">{{ lastAccessMessage(contacts[currentContact].messages) }}</p>
+                    <p class="m-0 fw-bolder text-secondary" v-if="contacts[currentContact].messages.length > 0">{{ lastAccessMessage(contacts[currentContact].messages) }}</p>
                 </div>
             <div class=" flex-end d-flex ">
                 <i class="fa-solid fa-magnifying-glass text-secondary ms-3 fs-4" type="button"></i>
@@ -106,7 +106,7 @@
 
             <!-- CONTAINER MESSAGE -->
             <div class="containerMessage d-flex flex-column p-2">
-                <div v-for="message in contacts[currentContact].messages" class="d-flex mb-3 align-items-center px-3 containerMsgBox" :class="message.status == 'sent' ? 'sendedMsg' : 'receivedMsg'"  v-if="!isHidden">
+                <div v-for="(message, i) in contacts[currentContact].messages" class="d-flex mb-3 align-items-center px-3 containerMsgBox" :class="message.status == 'sent' ? 'sendedMsg' : 'receivedMsg'">
                   {{ message.message }} 
                  <p class="msgHour text-secondary fw-bold">{{ (message.date).substring(10,16) }}</p>
                  <div class="dropdown button-Dropdown">
@@ -115,7 +115,7 @@
                     </button>
                     <ul class="dropdown-menu  ">
                       <li><a class="dropdown-item " href="#">Message info</a></li>
-                      <li><a class="dropdown-item " href="#" v-on:click="isHidden = true">Delete message</a></li>
+                      <li><a class="dropdown-item " href="#" v-on:click="deleteMsgCurrent(i)">Delete message</a></li>
                     </ul>
                   </div>
                 </div>
